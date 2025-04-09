@@ -41,6 +41,31 @@ body{
     }
 }
 
+.YT{
+    display: inline-flex;
+    background-color: #d83068;
+    width: 60px;
+    height: 60px;
+    border: 2px solid blue;
+    border-radius: 35px;
+    h2{
+        padding: 5px;
+        display: none;
+    }
+}
+.YT:hover{
+    transform: scale(1.1);
+    background-color: #2f45c5;
+    transition: 0.5s;
+    h2{
+        display: block;
+        background-color:#2f45c5 ;
+        color: #ffffff7a;
+        border-radius: 15px;
+        transition: 2s;
+    }
+}
+
 .container{
     display: flexbox;
     justify-items: center;
@@ -54,4 +79,11 @@ body{
 
 list{
     text-align: center;
+}
+.foot{
+    display: flex;
+    justify-content: space-evenly;
+}
+.f1{
+    justify-self: baseline;
 }
