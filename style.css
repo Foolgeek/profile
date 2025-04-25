@@ -1,6 +1,6 @@
 
 body{
-    background: #1a1a1a;
+    background:#1F2937;
     color: #ffffff;
     margin: auto;
     padding: 25px;
@@ -136,4 +136,26 @@ list{
 }
 .f1{
     justify-self: baseline;
+}
+#popup{
+    background-color: transparent;
+    color: whitesmoke;
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    border-color: linear-gradient(270deg, red, blue, green,);
+}
+
+#pop{
+    display: none;
+    position: absolute; top: 20px;
+    background-color: aliceblue; 
+    
+}
+
+#closepopup{
+    position:absolute;
+    right: 15px;
+    font-size: 35px;
+    color: black;
+    cursor: pointer;
 }

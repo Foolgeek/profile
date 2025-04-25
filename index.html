@@ -34,6 +34,23 @@
       <li>And SO on..</li>
     </list>
 
+    <button id="popup">Contact Me</button>
+
+    <div id="pop">
+      <span id="closepopup">&times;</span>
+      <div>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScSi5LrUT3HOd0cCDObBw2NqLsaxVaSpnoTE7kdhVOII6igvQ/viewform?embedded=true"
+          width="640"
+          height="800"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
+      </div>
+    </div>
+
     <footer>
       <div class="foot">
         <div class="f1">
@@ -49,6 +66,17 @@
           </a>
         </div>
       </div>
+
+      <script>
+        document.getElementById("popup").onclick = function () {
+          document.getElementById("pop").style.display = "flex";
+          document.getElementById("new").style.display = "none";
+        };
+        document.getElementById("closepopup").onclick = function () {
+          document.getElementById("pop").style.display = "none";
+          document.getElementById("new").style.display = "relative";
+        };
+      </script>
     </footer>
   </body>
 </html>
