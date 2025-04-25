@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeewan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <button id="theme-toggle">🌙 Toggle Theme</button>
+
+    <div class="container">
+      <div id="photo">
+        <img src="Images/jeewan.jpg" id="pic1" />
+        <h1 id="typing-name"></h1>
+        <h2>
+          From Nepal, Kapilvastu<br />Born in 2001 AD (2058 BS)<br />Completed
+          Higher Education in 2020 AD
+        </h2>
+      </div>
+    </div>
+
+    <section class="skills-section">
+      <h2><u>Skills</u></h2>
+      <ul>
+        <li>
+          <strong>Basic Computer Skills:</strong> General troubleshooting and
+          operations
+        </li>
+        <li><strong>HTML & CSS:</strong> Front-end web design basics</li>
+        <li><strong>Photoshop:</strong> Image editing and manipulation</li>
+        <li>
+          <strong>Basic 3D Design:</strong> Introductory 3D modeling experience
+        </li>
+        <li>
+          <strong>Computer Repair:</strong> Diagnosing and repairing
+          hardware/software
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact-section">
+      <h2><u>Contact Me</u></h2>
+      <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display: none"></iframe>
+      <form
+        class="contact-form"
+        action="https://docs.google.com/forms/d/e/1FAIpQLScSi5LrUT3HOd0cCDObBw2NqLsaxVaSpnoTE7kdhVOII6igvQ/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="showToast(); resetForm(); return false;">
+        <input
+          name="entry.123456"
+          type="text"
+          placeholder="Your Name"
+          required />
+        <input
+          name="entry.654321"
+          type="email"
+          placeholder="Your Email"
+          required />
+        <textarea
+          name="entry.112233"
+          rows="5"
+          placeholder="Your Message"
+          required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="toast">Message sent successfully ✅</div>
+    </section>
+
+    <script>
+      // Typing animation
+      const nameText = "Jeewan Pokhrel";
+      let index = 0;
+      function typeLetter() {
+        const nameElement = document.getElementById("typing-name");
+        if (index < nameText.length) {
+          nameElement.innerHTML += nameText.charAt(index);
+          index++;
+          setTimeout(typeLetter, 150);
+        }
+      }
+      window.onload = () => {
+        typeLetter();
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") document.body.classList.add("light");
+      };
+
+      // Theme toggle
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.body.classList.toggle("light");
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("light") ? "light" : "dark"
+        );
+      });
+
+      // Toast logic
+      function showToast() {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 3000);
+      }
+
+      function resetForm() {
+        setTimeout(() => {
+          document.querySelector(".contact-form").reset();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

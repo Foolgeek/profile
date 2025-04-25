@@ -7,6 +7,56 @@ body{
     text-decoration: solid white;
 }
 
+#new{
+    position: relative;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#new::before{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(270deg, #00ffff, #0077ff, #ff00cc, #00ffff);
+  background-size: 600% 600%;
+  border-radius: 14px;
+  z-index: -1;
+  animation: borderGlow 4s ease infinite;
+}
+#new::after{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #1a1a1a; 
+  border-radius: 10px;
+  z-index: -1;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;}
+}
+
 #pic1{
     display: inline-block;
     border: 2px solid black ;
